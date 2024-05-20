@@ -11,7 +11,10 @@ wd = webdriver.Chrome(options=chrome_options)
 url = "https://www.baidu.com/"
 wd.get(url=url)
 
-time.sleep(30)
-data = wd.page_source
-# print(data)
-wd.quit()
+# 程序即将结束时，询问是否关闭浏览器
+choice = input("Do you want to close the browser? (Y/N) ")
+if choice.lower() == "y":
+    # 关闭浏览器
+    wd.quit()
+else:
+    print("Browser will remain open.")
