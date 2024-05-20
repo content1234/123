@@ -19,7 +19,7 @@ def get_url(url_list,page):
 
 if __name__ == "__main__":
     chrome_options = ChromiumOptions().headless()       # 设置无头
-    page = ChromiumPage()
+    page = ChromiumPage(chrome_options)
     url_list = open_url()
     get_url(url_list=url_list,page=page)
 
