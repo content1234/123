@@ -1,3 +1,6 @@
+import psutil
+import time
+import requests
 from DrissionPage import ChromiumPage, ChromiumOptions
 
 def open_url():
@@ -10,17 +13,24 @@ def open_url():
             url_list.append(i)
     return url_list
 
-def get_url(url_list,page):
+def get_url():
     """
     多开浏览器标签
     """
-    for i in url_list:
-        page.new_tab(url=i.replace('\n', ""))
-
-if __name__ == "__main__":
     chrome_options = ChromiumOptions().headless()       # 设置无头
-    page = ChromiumPage(chrome_options)
-    url_list = open_url()
-    get_url(url_list=url_list,page=page)
+    page = ChromiumPage()
+    for i in open_url():
+        url = i.replace('\n', "")
+        page.new_tab(url=url)
+
+while True:
+    pro = psutil.process_iter()
+    filtered = [i for i in pro if "chrome.exe" in i.name()]
+    if len(filtered) > 0:
+        print("ok")
+        time.sleep(120)
+    else:
+        get_url()
+        time.sleep(120)
 
 
