@@ -18,7 +18,7 @@ def get_url():
     多开浏览器标签
     """
     chrome_options = ChromiumOptions().headless()       # 设置无头
-    page = ChromiumPage()
+    page = ChromiumPage(chrome_options)
     for i in open_url():
         url = i.replace('\n', "")
         page.new_tab(url=url)
