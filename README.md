@@ -1,6 +1,14 @@
 # docker启动浏览器
 ### docker镜像    selenium/standalone-chrome自带chrome浏览器
 ### 安装对应版本的chromedriver（找不到打一个版本也可以试试）
+#### docker终端克隆项目并解压
+```
+yunda@users:/www/wwwroot$ wget url路径
+...
+yunda@users:/www/wwwroot$ git clone https://github.com/content1234/123.git
+...
+yunda@users:/www/wwwroot$ unzip 压缩包名
+```
 ### docker      ls查看目录进入cd 123目录下
 
 ***列***
