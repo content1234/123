@@ -1,4 +1,6 @@
 # docker启动浏览器
+### docker镜像    selenium/standalone-chrome自带chrome浏览器
+### 安装对应版本的chromedriver（找不到打一个版本也可以试试）
 ### docker      ls查看目录进入cd 123目录下
 
 ***列***
