@@ -1,0 +1,4 @@
+{
+    "code": 404,
+    "message": "Cannot POST /api?method=getAccount"
+}
